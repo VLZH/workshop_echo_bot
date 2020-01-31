@@ -6,6 +6,11 @@ from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("echo-bot")
 
+HELLO_MESSAGE = """
+Хэй! Я Echo-бот🤖!
+Напиши мне что-нибудь и я отвечу тебе тем же!
+"""
+
 
 def echo(update, context):
     context.bot.send_message(
@@ -16,7 +21,7 @@ def echo(update, context):
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Hello!")
+    context.bot.send_message(chat_id=update.effective_chat.id, text=HELLO_MESSAGE)
 
 
 def main():
